@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Directum на UfaDevConf 2018
 
 You can use the [editor on GitHub](https://github.com/directumufa/ufadefconf/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
