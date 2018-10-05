@@ -1,5 +1,8 @@
 ## Directum на UfaDevConf 2018
 
+**[Чат-бот](https://directumufa.github.io/ufadefconf/chatbot)** | **[Bot-fight](https://directumufa.github.io/ufadefconf/botfight)**
+
+
 You can use the [editor on GitHub](https://github.com/directumufa/ufadefconf/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
