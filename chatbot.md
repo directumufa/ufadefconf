@@ -1,4 +1,4 @@
-## Чат-бот навигатор по конференции
+## Чат-бот навигатор по UfaDevConf 2018
 
 **Чат-бот** | **[Bot-fight](https://directumufa.github.io/ufadefconf/botfight)** | **[Мастер-классы](https://directumufa.github.io/ufadefconf/mclasses)**
 
