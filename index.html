@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
-    <title>Homepage - Semantic</title>
+    <title>UfaDevConf 2018 &#151; Directum</title>
     <link rel="stylesheet" type="text/css" href="components/reset.css">
     <link rel="stylesheet" type="text/css" href="components/site.css">
 
@@ -147,6 +147,11 @@
 
             })
         ;
+        function goToAnchor(anchor) {
+            var loc = document.location.toString().split('#')[0];
+            document.location = loc + '#' + anchor;
+            return false;
+        }
     </script>
 </head>
 <body>
@@ -198,7 +203,7 @@
                 </div>
             </h1>
             <h2>Зона активностей Directum на конференции</h2>
-            <div class="ui huge primary button" style="margin-bottom: 4.5em; background-color: #79a800;">
+            <div class="ui huge primary button" style="margin-bottom: 4.5em; background-color: #79a800;" onclick="goToAnchor('bots')">
                 Приступим <i class="right arrow icon"></i>
             </div>
             <h3>«Конгресс-холл» &#151; г. Уфа, ул. Заки Валиди, 2 <br />17 ноября 2018 г.</h3>
@@ -213,6 +218,10 @@
                 <div class="eight wide column">
                     <h3 class="ui header">Мы хотим, чтобы вы попали на все интересные доклады</h3>
                     <p>Для этого мы разработали чат-бота для Viber и Telegram, который позволит ознакомиться с сеткой докладов и составить личную программу, а так же вовремя напомнит о всех мероприятиях конференции.</p>
+                    <span>
+                        <a href="viber://pa?chatURI=ufadevconf2018"><img src="images/viber.png"></a>
+                        <a href="https://api.telegram.org/bot%3CTOKEN%3E/getMe"><img src="images/telegram.png"></a>
+                    </span>
                     <h3 class="ui header">А еще мы создали игру</h3>
                     <p>В которой вы можете написать программу для танка-бота, который выйдет на поле боя и докажет остальным &#151; кто здесь сильный программист.</p>
                 </div>
