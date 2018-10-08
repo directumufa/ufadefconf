@@ -145,11 +145,25 @@
                     .sidebar('attach events', '.toc.item')
                 ;
 
+                $('#prisesblock').transition('scale');
+
+                $('#getstarted').transition('pulse', '2000ms');
+
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+
+                        document.querySelector(this.getAttribute('href')).scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                });
             })
         ;
         function goToAnchor(anchor) {
-            var loc = document.location.toString().split('#')[0];
-            document.location = loc + '#' + anchor;
+            document.querySelector(anchor).scrollIntoView({
+                behavior: 'smooth'
+            });
             return false;
         }
     </script>
@@ -203,7 +217,7 @@
                 </div>
             </h1>
             <h2>Зона активностей Directum на конференции</h2>
-            <div class="ui huge primary button" style="margin-bottom: 4.5em; background-color: #79a800;" onclick="goToAnchor('bots')">
+            <div id="getstarted" class="ui huge primary button" style="margin-bottom: 4.5em; background-color: #79a800;" onclick="goToAnchor('#bots')">
                 Приступим <i class="right arrow icon"></i>
             </div>
             <h3>«Конгресс-холл» &#151; г. Уфа, ул. Заки Валиди, 2 <br />17 ноября 2018 г.</h3>
@@ -245,7 +259,7 @@
                     <h3 >&laquo;Это была какая-то 💩&raquo;</h3>
                     <p>В чат-боте можно оценивать доклады</p>
                 </div>
-                <div class="column" style="background: url('images/codefight.png') 50% 50%; color: white;  text-shadow: 0 0 7px black;">
+                <div class="column" style="background: url('images/codefight.jpg') 50% 50%; color: white;  text-shadow: 0 0 7px black;">
                     <h3>&laquo;Мой бот всех порвёт 🏆&raquo;</h3>
                     <p>
                         <b>Танковые бои</b> &#151; игра для всех, кто может написать код<br /> на любом языке, от эвристик до нейросеток. <br />Лишь одно ограничение &#151; время ответа не больше секунды
@@ -293,7 +307,36 @@
                 <p>4. Игра для веб-разработчиков &laquo;Code in the Dark&raquo;</p>
                 <p>5. Соревнование по скоростной разработке</p>
             </div>
-            <a class="ui large button">Призы и сувениры для участников</a>
+            <a class="ui large button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition('tada')">Призы и сувениры для участников</a>
+            <div class="ui grid" id="prisesblock" style="margin-top: 20px; font-size: small">
+                <h3 style="font-size: x-large">Призы участникам танковых боев</h3>
+                <div class="ui grid center aligned">
+                    <div class="four wide column">
+                        <img class="prises" src="images/steampad.jpg" width="150" />
+                        Победителю<br /><b>Valve Steam Controller</b>
+                    </div>
+                    <div class="seven wide column">
+                        <img class="prises" src="images/cougar.jpg" width="300" style="margin: 5px 0" />
+                        За второе место <br /><b>Cougar Vantar</b>
+                    </div>
+                    <div class="three wide column">
+                        <img class="prises" src="images/vmouse.jpg" width="65" style="margin-left: 10px" />
+                        <br /> За третье место <br /><b>Vertical Mouse</b>
+                    </div>
+                </div>
+                <h3 style="font-size: x-large">Сувениры участникам мастер-классов</h3>
+                <div class="ui grid center aligned">
+                    <div class="four wide column">
+                        <img class="prises" src="images/book1.jpg" width="150" />
+                    </div>
+                    <div class="six wide column">
+                        <img class="prises" src="images/infinitycube.jpg" width="200" />
+                    </div>
+                    <div class="four wide column">
+                        <img class="prises" src="images/book2.jpg" width="150"  />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
