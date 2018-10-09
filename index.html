@@ -307,7 +307,8 @@
                 <p>4. Игра для веб-разработчиков &laquo;Code in the Dark&raquo;</p>
                 <p>5. Соревнование по скоростной разработке</p>
             </div>
-            <a class="ui large button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition('tada')">Призы и сувениры для участников</a>
+            <a id="prisestitle"></a>
+            <a class="ui large button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition({animation: 'tada', interval: 1000}); window.setTimeout(() => goToAnchor('#prisestitle'), 100)">Призы и сувениры для участников</a>
             <div class="ui grid" id="prisesblock" style="margin-top: 20px; font-size: small">
                 <h3 style="font-size: x-large">Призы участникам танковых боев</h3>
                 <div class="ui grid center aligned">
