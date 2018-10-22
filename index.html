@@ -112,9 +112,9 @@
         }
 
         @media only screen and (max-width: 700px) {
-            .ui.fixed.menu {
+/*            .ui.fixed.menu {
                 display: none !important;
-            }
+            }*/
             .secondary.pointing.menu .item,
             .secondary.pointing.menu .menu {
                 display: none;
@@ -147,7 +147,7 @@
             .ready(function() {
 
                 // fix menu when passed
-                $('.masthead')
+/*                $('.masthead')
                     .visibility({
                         once: false,
                         onBottomPassed: function() {
@@ -157,7 +157,7 @@
                             $('.fixed.menu').transition('fade out');
                         }
                     })
-                ;
+                ;*/
 
                 // create sidebar and attach to menu open
                 $('.ui.sidebar')
@@ -216,7 +216,8 @@
 <body>
 
 <!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
+
+<!--<div class="ui large top fixed hidden menu">
     <div class="ui container" style="padding-left: 20%">
         <a class="active item" href="#begin" style="background-color: #ffc764">Начало</a>
         <a class="item" href="#bots">Чат-бот</a>
@@ -224,13 +225,13 @@
         <a class="item" href="#master-classes">Мастер-классы</a>
         <a class="item" href="https://career.directum.ru">Карьера</a>
     </div>
-</div>
+</div>-->
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
     <a class="active item" href="#begin">Начало</a>
     <a class="item" href="#bots">Чат-бот</a>
-    <a class="item" href="#bots">Кодобойня</a>
+    <a class="item" href="#fights">Кодобойня</a>
     <a class="item" href="#master-classes">Мастер-классы</a>
     <a class="item" href="https://career.directum.ru">Карьера</a>
     <a class="item">Directum</a>
@@ -241,21 +242,21 @@
 <div class="pusher">
     <a id="begin"></a>
     <div class="ui inverted vertical masthead center aligned segment" style="background: url('images/bg_main.jpg'); background-size: cover; background-attachment: fixed;">
-        <div class="ui grid center aligned" style="width: 100%; background-color: black; margin: -1rem 0px; box-shadow: 0px -15px 55px 15px #100000">
+        <div class="ui grid center aligned top fixed menu" style="padding-top: 10px; width: 100%; background-color: black; margin: -1rem 0px; box-shadow: 0px -15px 55px 15px #100000">
             <div class="ui" style="padding-top: 5px;">
                 <div class="ui large secondary inverted pointing menu" style="font-size: large">
                     <a class="toc item">
                         <i class="sidebar icon"></i>
                     </a>
-                    <a class="active item">Начало</a>
+                    <a class="active item" href="#begin">Начало</a>
                     <a class="item" href="#bots">Чат-бот</a>
                     &emsp;<img src="images/directum.png" width="40" height="47" alt="Directum" />&emsp;
-                    <a class="item" href="#bots">Кодобойня</a>
+                    <a class="item" href="#fights">Кодобойня</a>
                     <a class="item" href="#master-classes">Мастер-классы</a>
                 </div>
             </div>
         </div>
-        <div class="ui text container" style="color: black; font-family: 'Roboto Condensed';">
+        <div class="ui text container" style="color: black; font-family: 'Roboto Condensed',sans-serif;">
             <h1 class="ui inverted header">
                 <div style="font-size: 1.3em; text-shadow: 0 0 20px #e55b00">
                     UfaDevConf 2018
@@ -270,7 +271,6 @@
     </div>
 
 
-
     <div class="ui vertical stripe segment" style="box-shadow: 0px 25px 55px 15px #301000">
         <div class="ui middle aligned stackable grid container"><a id="bots" style="display: block; margin-top: -70px"></a>
             <div class="row">
@@ -281,6 +281,7 @@
                         <a href="viber://pa?chatURI=ufadevconf2018"><img src="images/viber.png"></a>
                         <a href="tg://resolve?domain=UDC_2018_Bot"><img src="images/telegram.png"></a>
                     </span>
+                    <a id="fights" style="margin: -50px 0px 80px 0px; display: block"></a>
                     <h3 class="ui header">Еще мы придумали для вас игру</h3>
                     <p>В ней вы можете написать программу для танка-бота, который выйдет на поле боя и докажет остальным &#151; кто самый сильный программист. <span style="color: #ac3817">Ссылка на игру будет опубликована за 10 дней до конференции.</span> </p>
                 </div>
