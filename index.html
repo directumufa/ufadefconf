@@ -135,57 +135,6 @@
 
     </style>
 
-    <script src="library/jquery.min.js"></script>
-    <script src="components/visibility.js"></script>
-    <script src="components/sidebar.js"></script>
-    <script src="components/transition.js"></script>
-    <script>
-        $(document)
-            .ready(function() {
-
-                // create sidebar and attach to menu open
-                $('.ui.sidebar')
-                    .sidebar('attach events', '.toc.item')
-                ;
-
-                $('#prisesblock').transition('scale');
-
-                $('#getstarted').transition('pulse', '2000ms');
-
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-
-                        document.querySelector(this.getAttribute('href')).scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    });
-                });
-
-                $(function() {
-                    $('a[href*="#"]:not([href="#"])').click(function() {
-                        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                            var target = $(this.hash);
-                            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                            if (target.length) {
-                                $('html, body').animate({
-                                    scrollTop: target.offset().top
-                                }, 1000);
-                                return false;
-                            }
-                        }
-                    });
-                });
-            })
-        ;
-        function goToAnchor(anchor) {
-            document.querySelector(anchor).scrollIntoView({
-                behavior: 'smooth'
-            });
-            return false;
-        }
-    </script>
-
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127794206-1"></script>
     <script>
@@ -195,6 +144,7 @@
 
         gtag('config', 'UA-127794206-1');
     </script>
+    <link rel="stylesheet" href="components/style.css">
 
 </head>
 <body>
@@ -213,7 +163,7 @@
 <!-- Page Contents -->
 <div class="pusher">
     <a id="begin"></a>
-    <div class="ui inverted vertical masthead center aligned segment" style="background: url('images/bg_main.jpg'); background-size: cover; background-attachment: fixed;">
+    <div id="page-intro" class="ui inverted vertical masthead center aligned segment">
         <div class="ui grid center aligned top fixed menu" style="padding-top: 10px; width: 100%; background-color: black; margin: -1rem 0px; box-shadow: 0px -15px 55px 15px #100000">
             <div class="ui" style="padding-top: 5px;">
                 <div class="ui large secondary inverted pointing menu" style="font-size: large">
@@ -250,8 +200,8 @@
                     <h3 class="ui header">Мы хотим, чтобы вы увидели все самое интересное</h3>
                     <p>Мы разработали чат-бота для Viber и Telegram, который позволит ознакомиться с сеткой докладов и составить личную программу, а так же вовремя напомнит о мероприятиях конференции.</p>
                     <span>
-                        <a href="viber://pa?chatURI=ufadevconf2018"><img src="images/viber.png"></a>
-                        <a href="tg://resolve?domain=UDC_2018_Bot"><img src="images/telegram.png"></a>
+                        <a href="viber://pa?chatURI=ufadevconf2018"><img src="images/viber.png" alt="Viber"></a>
+                        <a href="tg://resolve?domain=UDC_2018_Bot"><img src="images/telegram.png" alt="Telegram"></a>
                     </span>
                     <a id="fights" style="margin: -50px 0px 80px 0px; display: block"></a>
                     <h3 class="ui header">Еще мы придумали для вас игру</h3>
@@ -273,11 +223,11 @@
     <div class="ui vertical stripe quote segment">
         <div class="ui equal width stackable internally celled grid">
             <div class="center aligned row" >
-                <div class="column" style="background: url('images/bg_cbr.jpg') 100% 50%">
+                <div class="column" style="background: url('images/bg_cbr.jpg') 100% 50%; min-height: 260px">
                     <h3 >&laquo;Это была какая-то 💩&raquo;</h3>
                     <p>В чат-боте можно оценивать доклады</p>
                 </div>
-                <div class="column" style="background: url('images/codefight.jpg') 50% 50%; color: white;  text-shadow: 0 0 7px black;">
+                <div class="column" style="background: url('images/codefight.jpg') 50% 50%; color: white;  text-shadow: 0 0 7px black; min-height: 260px">
                     <h3>&laquo;Мой бот всех порвёт 🏆&raquo;</h3>
                     <p>
                         <b>Танковые бои</b> &#151; игра для всех, кто может написать код<br /> на любом языке, от эвристик до нейросеток. <br />Лишь одно ограничение &#151; время ответа не больше секунды
@@ -292,7 +242,7 @@
         <div class="ui text container">
             <h3 class="ui header">Мы готовы поделиться знаниями</h3>
             <div style="margin-bottom: 4em">
-                <img src="https://static.tildacdn.com/tild6361-3939-4337-b033-356337396464/tasadullin.jpg" />
+                <img src="https://static.tildacdn.com/tild6361-3939-4337-b033-356337396464/tasadullin.jpg" alt="Тимур Асадуллин"/>
                 <div>
                     <div style="font-size:26px;"><b>COMMON: Психоневрология команды</b></div>
                     <div style="font-size:20px;font-weight:400;margin-bottom:5px;">Тернистый путь тим-лида к гармонии с разработчиками</div>
@@ -304,7 +254,7 @@
                 </div>
             </div>
             <div>
-                <img src="https://static.tildacdn.com/tild3537-3634-4263-b733-383766306666/vblajhnov.jpg" />
+                <img src="https://static.tildacdn.com/tild3537-3634-4263-b733-383766306666/vblajhnov.jpg" alt="Василий Блажнов"/>
                 <div>
                     <div style="font-size:26px;"><b>BACKEND: Закулисье чат-бота</b></div>
                     <div style="font-size:20px;font-weight:400;margin-top:20px;">15:20 – 16:05</div>
@@ -326,10 +276,10 @@
                 <p>5. Консультация менеджера по талантам &laquo;Как успешно пройти интервью&raquo;</p>
             </div>
             <a id="prisestitle"></a>
-            <a class="ui large button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition({animation: 'tada', interval: 1000}); window.setTimeout(() => goToAnchor('#prisestitle'), 100)">Призы и сувениры для участников</a>
+            <button class="ui large button" type="button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition({animation: 'tada', interval: 1000}); window.setTimeout(() => goToAnchor('#prisestitle'), 100)">Призы и сувениры для участников</button>
             <div class="ui grid" id="prisesblock" style="margin-top: 20px; font-size: small">
                 <h3 style="font-size: x-large">Призы участникам танковых боев</h3>
-                <div class="ui grid center aligned">
+                <div class="ui grid center aligned" style="flex-grow: 1;">
                     <div class="four wide column">
                         <img class="prises" src="images/steampad.jpg" width="150" />
                         Победителю<br /><b>Microsoft Xbox One Controller</b>
@@ -344,7 +294,7 @@
                     </div>
                 </div>
                 <h3 style="font-size: x-large">Сувениры участникам мастер-классов</h3>
-                <div class="ui grid center aligned">
+                <div class="ui grid center aligned" style="flex-grow: 1;">
                     <div class="four wide column">
                         <img class="prises" src="images/book1.jpg" width="150" />
                     </div>
@@ -375,6 +325,56 @@
     </div>
 </div>
 
+<script src="library/jquery.min.js"></script>
+<script src="components/visibility.js"></script>
+<script src="components/sidebar.js"></script>
+<script src="components/transition.js"></script>
+<script>
+  $(document)
+    .ready(function() {
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+      $('#prisesblock').transition('scale');
+
+      $('#getstarted').transition('pulse', '2000ms');
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      $(function() {
+        $('a[href*="#"]:not([href="#"])').click(function() {
+          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top
+              }, 1000);
+              return false;
+            }
+          }
+        });
+      });
+    })
+  ;
+  function goToAnchor(anchor) {
+    document.querySelector(anchor).scrollIntoView({
+      behavior: 'smooth'
+    });
+    return false;
+  }
+</script>
 </body>
 
 </html>

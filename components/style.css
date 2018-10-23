@@ -1,0 +1,22 @@
+#page-intro {
+  padding-top: 68px;
+
+  background-image: url('../images/bg-main-desktop@1.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@media (max-width: 700px) {
+  #page-intro {
+    margin-top: 55px;
+  }
+}
+
+@media (max-width: 700px) {
+  #prisesblock .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100% !important;
+  }
+}
