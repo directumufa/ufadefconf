@@ -2,8 +2,8 @@
 <html>
 <head>
     <!-- Standard Meta -->
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
     <!-- Site Properties -->
@@ -36,7 +36,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png">
@@ -58,18 +58,22 @@
             min-height: 700px;
             padding: 1em 0em;
         }
+
         .masthead .logo.item img {
             margin-right: 1em;
         }
+
         .masthead .ui.menu .ui.button {
             margin-left: 0.5em;
         }
+
         .masthead h1.ui.header {
             margin-top: 3em;
             margin-bottom: 0em;
             font-size: 4em;
             font-weight: normal;
         }
+
         .masthead h2 {
             font-size: 1.7em;
             font-weight: normal;
@@ -78,19 +82,24 @@
         .ui.vertical.stripe {
             padding: 8em 0em;
         }
+
         .ui.vertical.stripe h3 {
             font-size: 2em;
         }
+
         .ui.vertical.stripe .button + h3,
         .ui.vertical.stripe p + h3 {
             margin-top: 3em;
         }
+
         .ui.vertical.stripe .floated.image {
             clear: both;
         }
+
         .ui.vertical.stripe p {
             font-size: 1.33em;
         }
+
         .ui.vertical.stripe .horizontal.divider {
             margin: 3em 0em;
         }
@@ -98,6 +107,7 @@
         .quote.stripe.segment {
             padding: 0em;
         }
+
         .quote.stripe.segment .grid .column {
             padding-top: 5em;
             padding-bottom: 5em;
@@ -116,16 +126,20 @@
             .secondary.pointing.menu .menu {
                 display: none;
             }
+
             .secondary.pointing.menu .toc.item {
                 display: block;
             }
+
             .masthead.segment {
                 min-height: 350px;
             }
+
             .masthead h1.ui.header {
                 font-size: 2em;
                 margin-top: 1.5em;
             }
+
             .masthead h2 {
                 margin-top: 0.5em;
                 font-size: 1.5em;
@@ -135,18 +149,23 @@
         .fullscreen-bg__video {
             width: 100%;
             height: 100%;
-            margin: -50px -20px 0px -20px;
+            margin: -25px -20px 0px -20px;
             z-index: 10;
             position: relative;
         }
 
         .rcbox {
-            background-color: rgba(247, 250, 252, 0.8);
-            box-shadow: 0 0 100px 10px rgba(247, 250, 252, 0.8);
+            background-color: rgba(33, 36, 11, 0.8);
+            box-shadow: 0 0 100px 10px rgba(0, 0, 0, 0.8);
             border-radius: 20px;
-            margin-top: -500px;
+            margin: 0px 10%;
             z-index: 100;
-            position: relative;
+            position: absolute;
+            top: 120px;
+            width: 80%;
+            padding: 20px;
+            color: white;
+            line-height: 0;
         }
 
     </style>
@@ -155,7 +174,11 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-127794206-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
         gtag('js', new Date());
 
         gtag('config', 'UA-127794206-1');
@@ -163,7 +186,7 @@
     <link rel="stylesheet" href="components/style.css">
 
 </head>
-<body>
+<body style="background-color: #121313">
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
@@ -180,7 +203,8 @@
 <div class="pusher">
     <a id="begin"></a>
     <div class="ui inverted vertical masthead center aligned segment">
-        <div class="ui grid center aligned top fixed menu" style="padding-top: 10px; width: 100%; background-color: black; margin: -1rem 0px; box-shadow: 0px -15px 55px 15px #100000">
+        <div class="ui grid center aligned top fixed menu"
+             style="padding-top: 10px; width: 100%; background-color: black; margin: -1rem 0px; box-shadow: 0px -15px 55px 15px #100000">
             <div class="ui" style="padding-top: 5px;">
                 <div class="ui large secondary inverted pointing menu" style="font-size: large">
                     <a class="toc item">
@@ -188,19 +212,34 @@
                     </a>
                     <a class="item" href="index.html#begin">Начало</a>
                     <a class="item" href="index.html#bots">Чат-бот</a>
-                    &emsp;<img src="images/directum.png" width="40" height="47" alt="Directum" />&emsp;
-                    <a class="active item" href="#fights">Кодобойня</a>
+                    &emsp;<img src="images/directum.png" width="40" height="47" alt="Directum"/>&emsp;
+                    <a class="active item" href="#">Кодобойня</a>
                     <a class="item" href="index.html#master-classes">Мастер-классы</a>
                 </div>
             </div>
         </div>
-        <div class="" style="color: black; font-family: 'Roboto Condensed',sans-serif; text-align: center">
+        <div>
             <video loop muted autoplay poster="images/tanksbg.jpg" class="fullscreen-bg__video">
                 <source src="images/tanksbg.webm" type="video/webm">
                 <source src="images/tanksbg..mp4" type="video/mp4">
             </video>
-            <div style="width: 70%; height: 300px;" class="rcbox">
-                Test
+            <div class="rcbox">
+                <h2>Бой танк-ботов пройдет в реальном времени на UfaDevConf 2018</h2>
+                <p style="margin-top: 30px">Для участия вам нужно <b>разработать</b> своего бота на любом языке програмироваия,
+                    <b>опубликовать</b> собранный docker-образ на <a href="https://hub.docker.com" style="color: lightblue">hub.docker.com</a> и
+                    <b>зарегистрироваться</b> в качестве участника.</p>
+                <p>На поле боя вас ждут: <b>неразрушимые</b> &#151; <img src="images/tanks/rock-1.png" align="middle" style="margin-right: 10px"> и <b>разрушимые</b> &#151;
+                    <img src="images/tanks/tree-1.png" align="middle"><img src="images/tanks/single-house.png" align="middle">препятствия</p>
+                <p>От 1 до 3 вражеских <b>танков</b> &#151; <img src="images/tanks/tank_00.png" align="middle" style="margin: -8px -10px 0px 5px">
+                    &hellip;<img src="images/tanks/tank_02.png" align="middle" style="margin: -8px 10px 0px -7px"> и уйма вражеских <b>пуль</b> &#151;
+                    <img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"></p>
+                <p>
+                    Ваш <img src="images/tanks/tank_01.png" align="middle" style="margin: -8px 10px 0px 2px"> выдержит <b>2</b> прямых попадения,
+                    в отличии от деревьев, которые сгорают до тла <img src="images/tanks/burned-tree.png" align="middle" style="margin-top: -3px"> с первого выстрела<br/>
+                    и домов, которые рассыпаются в щепки <img src="images/tanks/explosed-house.png" align="middle"> с двух снарядов.
+                </p>
+                <p>На раздумья боту дается до 1 секунды, а чтобы было веселее, через некоторое время включается режим <b>&laquo;Королевской битвы&raquo;</b></p>
+                <a class="ui huge button">В бой!</a>
             </div>
         </div>
     </div>
