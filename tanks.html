@@ -147,11 +147,11 @@
         }
 
         .fullscreen-bg__video {
-            width: 100%;
-            height: 100%;
-            margin: -25px -20px 0px -20px;
-            z-index: 10;
-            position: relative;
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            right: 0;
+            bottom: 0;
         }
 
         .rcbox {
@@ -163,7 +163,7 @@
             position: absolute;
             top: 120px;
             width: 80%;
-            padding: 20px;
+            padding: 0px 10px;
             color: white;
             line-height: 0;
         }
@@ -176,6 +176,20 @@
 
         .slide:not(.active) {
             display: none;
+        }
+
+        .angle {
+            color: lightblue;
+            cursor: pointer;
+            position: relative;
+            top: calc(50% - 20px);
+            transform: scale(1);
+            transition: all .2s ease-in-out;
+            z-index: 10;
+        }
+
+        .angle:hover {
+            transform: scale(1.7);
         }
 
     </style>
@@ -228,12 +242,14 @@
                 </div>
             </div>
         </div>
-        <div style="height: 700px">
+        <div style="height: 800px">
             <video loop muted autoplay poster="images/tanksbg.jpg" class="fullscreen-bg__video">
                 <source src="images/tanksbg.webm" type="video/webm">
                 <source src="images/tanksbg..mp4" type="video/mp4">
             </video>
             <div class="rcbox">
+                <i class="big left angle icon" style="float: left; margin-left: 1rem; margin-top: 2rem"></i>
+                <i class="big right angle icon" style="float: right; margin-right: 1rem; margin-top: 2rem"></i>
                 <div class="slide active">
                     <h2>Бой танк-ботов пройдет в реальном времени на UfaDevConf 2018</h2>
                     <p style="margin-top: 30px">Для участия вам нужно <b>разработать</b> своего бота на любом языке програмироваия,
@@ -253,7 +269,59 @@
                     <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">В бой!</a>
                 </div>
                 <div class="slide">
-Tests
+                    <h2>Архитектура</h2>
+                    <p><img src="images/arch.png" style="margin-top: 10px;" style="object-fit: contain; position: relative"></p>
+                </div>
+                <div class="slide">
+                    <h2>Входные и выходные данные</h2>
+                    <table>
+                        <tr>
+                            <td width="50%">
+                                <h4>JSON из STDIN</h4>
+                    <p style="white-space: pre; text-align: left">
+{
+    "ContentsInfo": [
+        {
+            "Coordinates": {
+                    "X": X,
+                    "Y": Y
+                },
+            "HealthCount": 0-255,
+            "Type": 0-3 <span style="color: lightgray">(0 - Tank, 1 - Barrier, 2 - NotDestroyable, 3 - Water)</span>
+        }, {&hellip;}
+    ],
+    "BulletsInfo": [],
+    "ZoneRadius": 100 <span style="color: lightgray">(for Battle Royal)</span>
+}
+                    </p>
+                            </td>
+                            <td valign="top" style="padding-left: 7rem">
+                                <h4>JSON в STDOUT</h4>
+                                <p style="white-space: pre; text-align: left">
+[{
+    "Type": 0-1 <span style="color: lightgray">(0 - Move, 1 - Shoot),</span>
+    "Direction": 0-3 <span style="color: lightgray">(0 - Up, 1 - Down, 2 - Left, 3 - Right)</span>
+}]
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="slide">
+                    <h2>Запуск</h2>
+                    <div style="text-align: left">
+                        <img src="images/tanks/docker-logo.png" align="middle" style="float: left; margin-right: 2rem;">
+                        <p>Убедитесь, что на компьютере установлены Docker (<a href="https://docs.docker.com/install/"
+                                                                               style="color: lightblue">https://docs.docker.com/install/</a>)
+                            и Docker-compose (<a href="https://docs.docker.com/compose/install/"
+                                                 style="color: lightblue">https://docs.docker.com/compose/install/</a>)
+                        </p>
+                        <p>Скачайте файл <a href="#" style="color: lightblue">docker-compose.yml</a></p>
+                        <p>Запустие команду <b>&laquo;docker-compose up&raquo;</b> в директории, в которой вы сохранили файл</p>
+                        <p>После запуска всех контейнеров, откройте в браузере: <a href="http://localhost:5006" style="color: lightblue">localhost:5006</a></p>
+                        <p>Отроектся веб-приложение Unity, в котором по умолчанию указаны docker-образы ботов со случаныйм поведением</p>
+                        <p>Для того чтобы поверить своего бота, необходимо перед запуском в диалоге указать имя образа</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -307,6 +375,25 @@ Tests
     });
     return false;
   }
+
+  $('.right')
+      .on('click', function() {
+          console.log('right');
+          $('.slide')
+              .siblings('.active:not(:last-of-type)')
+              .removeClass('active')
+              .next()
+              .addClass('active');
+      });
+
+  $('.left')
+      .on('click', function() {
+          $('.slide')
+              .siblings('.active:not(:first-of-type)')
+              .removeClass('active')
+              .prev()
+              .addClass('active');
+      });
 </script>
 </body>
 </html>
