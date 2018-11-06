@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8" />
@@ -48,7 +48,7 @@
 
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
-    <style type="text/css">
+    <style>
 
         .hidden.menu {
             display: none;
@@ -214,7 +214,7 @@
                     <p>В ней вы можете написать программу для танка-бота, который выйдет на поле боя и докажет остальным &#151; кто самый сильный программист.</p>
                 </div>
                 <div class="six wide right floated column">
-                    <img src="images/csar_logo.png" class="ui large rounded image">
+                    <img src="images/csar_logo.png" class="ui large rounded image" aria-hidden="true">
                 </div>
             </div>
             <div class="row">
@@ -287,28 +287,28 @@
                 <h3 style="font-size: x-large">Призы участникам танковых боев</h3>
                 <div class="ui grid center aligned" style="flex-grow: 1;">
                     <div class="four wide column">
-                        <img class="prises" src="images/steampad.jpg" width="150" />
+                        <img class="prises" src="images/steampad.jpg" width="150" alt="Контроллер для Microsoft Xbox One"/>
                         Победителю<br /><b>Microsoft Xbox One Controller</b>
                     </div>
                     <div class="seven wide column">
-                        <img class="prises" src="images/kb.jpg" width="300" style="margin: 15px 0 38px" />
+                        <img class="prises" src="images/kb.jpg" width="300" style="margin: 15px 0 38px" alt="Клавиатура Pavilion 600"/>
                         За второе место <br /><b>Pavilion 600</b>
                     </div>
                     <div class="three wide column">
-                        <img class="prises" src="images/vmouse.jpg" width="65" style="margin: 10px 0px 21px 5px" />
+                        <img class="prises" src="images/vmouse.jpg" width="65" style="margin: 10px 0px 21px 5px" alt="Мышка Vertical Mouse"/>
                         <br /> За третье место <br /><b>Vertical Mouse</b>
                     </div>
                 </div>
                 <h3 style="font-size: x-large">Сувениры участникам мастер-классов</h3>
                 <div class="ui grid center aligned" style="flex-grow: 1;">
                     <div class="four wide column">
-                        <img class="prises" src="images/book1.jpg" width="150" />
+                        <img class="prises" src="images/book1.jpg" width="150" alt="Книга 'Эволюционная архитектура'"/>
                     </div>
                     <div class="six wide column">
-                        <img class="prises" src="images/infinitycube.jpg" width="200" />
+                        <img class="prises" src="images/infinitycube.jpg" width="200" alt="Головоломка 'Бесконечный куб'"/>
                     </div>
                     <div class="four wide column">
-                        <img class="prises" src="images/book2.jpg" width="150"  />
+                        <img class="prises" src="images/book2.jpg" width="150" alt="Книга 'Масштабирование приложений'"/>
                     </div>
                 </div>
             </div>
@@ -348,7 +348,9 @@
 
       $('#getstarted').transition('pulse', '2000ms');
 
-      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      var anchors = document.querySelectorAll('a[href^="#"]');
+
+      Array.prototype.forEach.call(anchors, function(anchor) {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
 

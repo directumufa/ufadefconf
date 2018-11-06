@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <!-- Standard Meta -->
     <meta charset="utf-8"/>
@@ -48,7 +48,7 @@
 
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
 
-    <style type="text/css">
+    <style>
 
         .hidden.menu {
             display: none;
@@ -150,8 +150,8 @@
             position: absolute;
             min-width: 100%;
             min-height: 100%;
+            top: 0;
             right: 0;
-            bottom: 0;
         }
 
         .rcbox {
@@ -160,8 +160,7 @@
             border-radius: 20px;
             margin: 0px 10%;
             z-index: 100;
-            position: absolute;
-            top: 120px;
+            position: relative;
             width: 80%;
             padding: 0px 10px;
             color: white;
@@ -242,11 +241,11 @@
                 </div>
             </div>
         </div>
-        <div style="height: 800px">
-            <video loop muted autoplay poster="images/tanksbg.jpg" class="fullscreen-bg__video">
-                <source src="images/tanksbg.webm" type="video/webm">
-                <source src="images/tanksbg..mp4" type="video/mp4">
-            </video>
+        <video loop muted autoplay poster="images/tanksbg.jpg" class="fullscreen-bg__video">
+            <source src="images/tanksbg.webm" type="video/webm">
+            <source src="images/tanksbg..mp4" type="video/mp4">
+        </video>
+        <div class="tanks-content">
             <div class="rcbox">
                 <i class="big left angle icon" style="float: left; margin-left: 1rem; margin-top: 2rem"></i>
                 <i class="big right angle icon" style="float: right; margin-right: 1rem; margin-top: 2rem"></i>
@@ -255,31 +254,30 @@
                     <p style="margin-top: 30px">Для участия вам нужно <b>разработать</b> своего бота на любом языке программироваия.
                         <b>Опубликовать</b> собранный docker-образ на <a href="https://hub.docker.com" style="color: lightblue">hub.docker.com</a>.
                         <b>Зарегистрироваться</b> в качестве участника.</p>
-                    <p>На поле боя вас ждут: <b>неразрушимые</b> &#151; <img src="images/tanks/rock-1.png" align="middle" style="margin-right: 10px"> и <b>разрушимые</b> &#151;
-                        <img src="images/tanks/tree-1.png" align="middle"><img src="images/tanks/single-house.png" align="middle">препятствия</p>
-                    <p>От 1 до 3 вражеских <b>танков</b> &#151; <img src="images/tanks/tank_00.png" align="middle" style="margin: -8px -10px 0px 5px">
-                        &hellip;<img src="images/tanks/tank_02.png" align="middle" style="margin: -8px 10px 0px -7px"> и уйма вражеских <b>пуль</b> &#151;
-                        <img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px"></p>
+                    <p>На поле боя вас ждут: <b>неразрушимые</b> &#151; <img src="images/tanks/rock-1.png" align="middle" style="margin-right: 10px" alt="Скала"> и <b>разрушимые</b> &#151;
+                        <img src="images/tanks/tree-1.png" align="middle" alt="Дерево"><img src="images/tanks/single-house.png" align="middle" alt="Дом">препятствия</p>
+                    <p>От 1 до 3 вражеских <b>танков</b> &#151; <img src="images/tanks/tank_00.png" align="middle" style="margin: -8px -10px 0px 5px" alt="Зеленый вражеский танк">
+                        &hellip;<img src="images/tanks/tank_02.png" align="middle" style="margin: -8px 10px 0px -7px" alt="Синий вражеский танк"> и уйма вражеских <b>пуль</b> &#151;
+                        <img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px" alt="Пуля"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px" alt="Пуля"><img src="images/tanks/bullet.png" align="middle" style="margin-top: -6px" alt="Пуля"></p>
                     <p>
-                        Ваш <img src="images/tanks/tank_01.png" align="middle" style="margin: -8px 10px 0px 2px"> выдержит <b>2</b> прямых попадания,
-                        в отличии от деревьев, которые сгорают до тла <img src="images/tanks/burned-tree.png" align="middle" style="margin-top: -3px"> с первого выстрела<br/>
-                        и домов, которые рассыпаются в щепки <img src="images/tanks/explosed-house.png" align="middle"> с двух снарядов.
+                        Ваш <img src="images/tanks/tank_01.png" align="middle" style="margin: -8px 10px 0px 2px" alt="Наш танк"> выдержит <b>2</b> прямых попадания,
+                        в отличии от деревьев, которые сгорают до тла <img src="images/tanks/burned-tree.png" align="middle" style="margin-top: -3px" alt="Сгоревшее дерево"> с первого выстрела<br/>
+                        и домов, которые рассыпаются в щепки <img src="images/tanks/explosed-house.png" align="middle" alt=""> с двух снарядов.
                     </p>
                     <p>На раздумье боту дается до 1 секунды, а чтобы было веселее, через некоторое время включается режим <b>&laquo;Королевской битвы&raquo;</b></p>
                     <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">Arhh!</a>
                 </div>
                 <div class="slide">
                     <h2>Архитектура</h2>
-                    <p><img src="images/arch.png" style="margin-top: 10px;" style="object-fit: contain; position: relative"></p>
+                    <p><img src="images/arch.png" style="margin-top: 10px;" alt="Схема архитектуры"></p>
                     <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">I/O-хо-хо!</a>
                 </div>
                 <div class="slide">
                     <h2>Входные и выходные данные</h2>
-                    <table>
-                        <tr>
-                            <td width="50%">
-                                <h4>JSON из STDIN</h4>
-                    <p style="white-space: pre; text-align: left">
+                    <ul class="data-slide">
+                        <li>
+                           <h4>JSON из STDIN</h4>
+                            <pre style="font-family: inherit; text-align: left; line-height: 1.2em; overflow-x: auto;">
 {
     "ContentsInfo": [
         {
@@ -298,26 +296,24 @@
         }, {&hellip;}
     ],
     "ZoneRadius": 100 <span style="color: lightgray">(для королевской битвы)</span>
-}
-                    </p>
-                            </td>
-                            <td valign="top" style="padding-left: 7rem">
-                                <h4>JSON в STDOUT</h4>
-                                <p style="white-space: pre; text-align: left">
+                            </pre>
+                        </li>
+                        <li>
+                            <h4>JSON в STDOUT</h4>
+                        <pre style="font-family: inherit; text-align: left; line-height: 1.2em; overflow-x: auto;">
 [{
     "Type": 0-1 <span style="color: lightgray">(0 &#151; движение, 1 &#151; выстрел),</span>
     "Direction": 0-3 <span style="color: lightgray">(0 &#151; вверх, 1 &#151; вниз, 2 &#151; влево, 3 &#151; вправо)</span>
 }]
-                                </p>
-                            </td>
-                        </tr>
-                    </table>
+                        </pre>
+                        </li>
+                    </ul>
                     <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">В бой!</a>
                 </div>
                 <div class="slide">
                     <h2>Запуск</h2>
                     <div style="text-align: left">
-                        <img src="images/tanks/docker-logo.png" align="middle" style="float: left; margin-right: 2rem;">
+                        <img src="images/tanks/docker-logo.png" align="middle" style="float: left; margin-right: 2rem;" alt="Docker">
                         <p>Убедитесь, что на компьютере установлены Docker (<a href="https://docs.docker.com/install/"
                                                                                style="color: lightblue">https://docs.docker.com/install/</a>)
                             и Docker-compose (<a href="https://docs.docker.com/compose/install/"
@@ -327,11 +323,11 @@
                         <p>Запустие команду <b>&laquo;docker-compose up&raquo;</b> в директории, в которой вы сохранили файл.</p>
                         <p>После запуска всех контейнеров, перейдите в браузере по адресу: <a href="http://localhost:5006" style="color: lightblue">http://localhost:5006</a></p>
                         <p>Откроется веб-приложение Unity, в котором по умолчанию указаны docker-образы ботов со случаныйм поведением:</p>
-                        <div style="width: 100%; text-align: center; padding: 20px"><img src="images/tanks/login.png" width="50%"></div>
+                        <div style="width: 100%; text-align: center; padding: 20px"><img src="images/tanks/login.png" width="300" alt="Форма логина"></div>
                         <p>Для того, чтобы провести бой со своим ботом, необходимо указать имя образа в одном из полей и нажать &laquo;Start&raquo;</p>
                         <p>Детально разобрать бой можно перематывая историю клавишами &laquo;B&raquo; и &laquo;N&raquo;</p>
                         <div style="width: 100%; text-align: center">
-                            <a class="ui huge button" href="tg://resolve?domain=udctanks2018">Поддержка в telegram</a>
+                            <a class="ui huge button" href="tg://resolve?domain=udctanks2018" style="margin-bottom: 5px">Поддержка в telegram</a>
                             <a class="ui huge button" href="https://github.com/vblz/TankFight">Подробнее на github</a>
                         </div>
                     </div>
@@ -339,6 +335,7 @@
             </div>
         </div>
     </div>
+</div>
 <script src="library/jquery.min.js"></script>
 <script src="components/visibility.js"></script>
 <script src="components/sidebar.js"></script>
@@ -356,7 +353,9 @@
 
       $('#getstarted').transition('pulse', '2000ms');
 
-      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      var anchors = document.querySelectorAll('a[href^="#"]');
+
+      Array.prototype.forEach.call(anchors, function(anchor) {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
 
