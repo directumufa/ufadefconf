@@ -282,7 +282,7 @@
                 <p>5. Консультация менеджера по талантам &laquo;Как успешно пройти интервью&raquo;</p>
             </div>
             <a id="prisestitle"></a>
-            <button class="ui large button" type="button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition({animation: 'tada', interval: 1000}); window.setTimeout(() => goToAnchor('#prisestitle'), 100)">Призы и сувениры для участников</button>
+            <button class="ui large button" type="button" onclick="$('#prisesblock').transition('scale'); $('.prises').transition({animation: 'tada', interval: 1000}); window.setTimeout(function(){ goToAnchor('#prisestitle') }, 100)">Призы и сувениры для участников</button>
             <div class="ui grid" id="prisesblock" style="margin-top: 20px; font-size: small">
                 <h3 style="font-size: x-large">Призы участникам танковых боев</h3>
                 <div class="ui grid center aligned" style="flex-grow: 1;">
@@ -348,7 +348,7 @@
 
       $('#getstarted').transition('pulse', '2000ms');
 
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
 

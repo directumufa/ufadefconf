@@ -214,10 +214,10 @@
 
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
-    <a class="active item" href="#begin">Начало</a>
-    <a class="item" href="#bots">Чат-бот</a>
-    <a class="item" href="#fights">Кодобойня</a>
-    <a class="item" href="#master-classes">Мастер-классы</a>
+    <a class="active item" href="index.html#begin">Начало</a>
+    <a class="item" href="index.html#bots">Чат-бот</a>
+    <a class="active item" href="#">Кодобойня</a>
+    <a class="item" href="index.html#master-classes">Мастер-классы</a>
     <a class="item" href="https://career.directum.ru">Карьера</a>
     <a class="item">Directum</a>
 </div>
@@ -356,7 +356,7 @@
 
       $('#getstarted').transition('pulse', '2000ms');
 
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
 
@@ -391,7 +391,6 @@
 
   $('.right')
       .on('click', function() {
-          console.log('right');
           $('.slide')
               .siblings('.active:not(:last-of-type)')
               .removeClass('active')
