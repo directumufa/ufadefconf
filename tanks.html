@@ -264,7 +264,7 @@
                         в отличии от деревьев, которые сгорают до тла <img src="images/tanks/burned-tree.png" align="middle" style="margin-top: -3px" alt="Сгоревшее дерево"> с первого выстрела<br/>
                         и домов, которые рассыпаются в щепки <img src="images/tanks/explosed-house.png" align="middle" alt=""> с двух снарядов.
                     </p>
-                    <p>На раздумье боту дается до 1 секунды, а чтобы было веселее, через некоторое время включается режим <b>&laquo;Королевской битвы&raquo;</b></p>
+                    <p>На раздумье боту дается до 100 миллисекунд, а чтобы было веселее, через некоторое время включается режим <b>&laquo;Королевской битвы&raquo;</b></p>
                     <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">Arhh!</a>
                 </div>
                 <div class="slide">
@@ -291,8 +291,9 @@
     ],
     "BulletsInfo": [
         {
-            "UserId": UserId, <span style="color: lightgray">(имя танк-бота выпустившего снаряд)</span>
+            "OwnerId": OwnerId, <span style="color: lightgray">(имя танк-бота выпустившего снаряд)</span>
             "Coordinates": {&hellip;},
+            "Direction": 0-3 <span style="color: lightgray">(направление полета пули)</span>
         }, {&hellip;}
     ],
     "ZoneRadius": 100 <span style="color: lightgray">(для королевской битвы)</span>
