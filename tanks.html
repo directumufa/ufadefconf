@@ -266,11 +266,12 @@
                         и домов, которые рассыпаются в щепки <img src="images/tanks/explosed-house.png" align="middle"> с двух снарядов.
                     </p>
                     <p>На раздумья боту дается до 1 секунды, а чтобы было веселее, через некоторое время включается режим <b>&laquo;Королевской битвы&raquo;</b></p>
-                    <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">В бой!</a>
+                    <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">Arhh!</a>
                 </div>
                 <div class="slide">
                     <h2>Архитектура</h2>
                     <p><img src="images/arch.png" style="margin-top: 10px;" style="object-fit: contain; position: relative"></p>
+                    <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">I/O-хо-хо!</a>
                 </div>
                 <div class="slide">
                     <h2>Входные и выходные данные</h2>
@@ -287,11 +288,16 @@
                     "Y": Y
                 },
             "HealthCount": 0-255,
-            "Type": 0-3 <span style="color: lightgray">(0 - Tank, 1 - Barrier, 2 - NotDestroyable, 3 - Water)</span>
+            "Type": 0-3 <span style="color: lightgray">(0 &#151; танк, 1 &#151; препятствие, 2 &#151; неразрушимое, 3 &#151; вода)</span>
         }, {&hellip;}
     ],
-    "BulletsInfo": [],
-    "ZoneRadius": 100 <span style="color: lightgray">(for Battle Royal)</span>
+    "BulletsInfo": [
+        {
+            "UserId": UserId, <span style="color: lightgray">(имя танк-бота выпустившего снаряд)</span>
+            "Coordinates": {&hellip;},
+        }, {&hellip;}
+    ],
+    "ZoneRadius": 100 <span style="color: lightgray">(для королевской битвы)</span>
 }
                     </p>
                             </td>
@@ -299,13 +305,14 @@
                                 <h4>JSON в STDOUT</h4>
                                 <p style="white-space: pre; text-align: left">
 [{
-    "Type": 0-1 <span style="color: lightgray">(0 - Move, 1 - Shoot),</span>
-    "Direction": 0-3 <span style="color: lightgray">(0 - Up, 1 - Down, 2 - Left, 3 - Right)</span>
+    "Type": 0-1 <span style="color: lightgray">(0 &#151; движение, 1 &#151; выстрел),</span>
+    "Direction": 0-3 <span style="color: lightgray">(0 &#151; вверх, 1 &#151; вниз, 2 &#151; влево, 3 &#151; вправо)</span>
 }]
                                 </p>
                             </td>
                         </tr>
                     </table>
+                    <a class="ui huge button" onclick="$('.slide').siblings('.active:not(:last-of-type)').removeClass('active').next().addClass('active');">В бой!</a>
                 </div>
                 <div class="slide">
                     <h2>Запуск</h2>
@@ -316,11 +323,14 @@
                             и Docker-compose (<a href="https://docs.docker.com/compose/install/"
                                                  style="color: lightblue">https://docs.docker.com/compose/install/</a>)
                         </p>
-                        <p>Скачайте файл <a href="#" style="color: lightblue">docker-compose.yml</a></p>
-                        <p>Запустие команду <b>&laquo;docker-compose up&raquo;</b> в директории, в которой вы сохранили файл</p>
-                        <p>После запуска всех контейнеров, откройте в браузере: <a href="http://localhost:5006" style="color: lightblue">localhost:5006</a></p>
-                        <p>Отроектся веб-приложение Unity, в котором по умолчанию указаны docker-образы ботов со случаныйм поведением</p>
-                        <p>Для того чтобы поверить своего бота, необходимо перед запуском в диалоге указать имя образа</p>
+                        <p>Скачайте файл <a href="https://github.com/vblz/TankFight/blob/master/docker-compose.yml" style="color: lightblue">docker-compose.yml</a></p>
+                        <p>Запустие команду <b>&laquo;docker-compose up&raquo;</b> в директории, в которой вы сохранили файл.</p>
+                        <p>После запуска всех контейнеров, перейдите в браузере по адресу: <a href="http://localhost:5006" style="color: lightblue">http://localhost:5006</a></p>
+                        <p>Откроется веб-приложение Unity, в котором по умолчанию указаны docker-образы ботов со случаныйм поведением:</p>
+                        <div style="width: 100%; text-align: center; padding: 20px"><img src="images/tanks/login.png" width="50%"></div>
+                        <p>Для того, чтобы провести бой со своим ботом, необходимо указать имя образа в одном из полей и нажать &laquo;Start&raquo;</p>
+                        <p>Детально разобрать бой можно перематывая историю клавишами &laquo;B&raquo; и &laquo;N&raquo;</p>
+                        <div style="width: 100%; text-align: center"><a class="ui huge button" href="https://github.com/vblz/TankFight">Подробнее на github</a></div>
                     </div>
                 </div>
             </div>
